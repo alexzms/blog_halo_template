@@ -2,7 +2,7 @@
 <html
   lang="en"
   xmlns:th="http://www.thymeleaf.org"
-  th:replace="~{modules/layout :: html(title = ${theme.config.friends.friends_title ?: '朋友圈'}+'-'+${site.title},htmlType = friends,header = null,leftSidebar = true,content = ~{::content}, head = null, footer = null)}"
+  th:replace="~{modules/layout :: html(title = ${theme.config.friends.friends_title ?: 'Friends'}+'-'+${site.title},htmlType = friends,header = null,leftSidebar = true,content = ~{::content}, head = null, footer = null)}"
 >
   <th:block th:fragment="content">
     <body>
@@ -15,7 +15,7 @@
           <div class="joe_main">
             <div class="joe_detail">
               <h1 class="joe_detail__title txt-shadow">
-                [[${theme.config.friends.friends_title ?: '朋友圈'}]]
+                [[${theme.config.friends.friends_title ?: 'Friends'}]]
               </h1>
               <th:block th:if="${theme.config.friends.enable_friend_add}">
                 <a

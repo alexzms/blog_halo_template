@@ -2,7 +2,7 @@
 <html
   lang="en"
   xmlns:th="http://www.thymeleaf.org"
-  th:replace="~{modules/layout :: html(title = ${theme.config.journals.journals_title ?: '我的动态'}+'-'+${site.title},htmlType = journals,header = null,leftSidebar = true,content = ~{::content}, head = null, footer = null)}"
+  th:replace="~{modules/layout :: html(title = ${theme.config.journals.journals_title ?: 'My Moments'}+'-'+${site.title},htmlType = journals,header = null,leftSidebar = true,content = ~{::content}, head = null, footer = null)}"
 >
   <th:block th:fragment="content">
     <body>
@@ -15,7 +15,7 @@
           <div class="joe_main">
             <div class="joe_detail">
               <h1 class="joe_detail__title txt-shadow">
-                [[${theme.config.journals.journals_title ?: '我的动态'}]]
+                [[${theme.config.journals.journals_title ?: 'My Moments'}]]
               </h1>
               <th:block th:if="${theme.config.journals.enable_journal_add}">
                 <a
@@ -48,11 +48,11 @@
                     </div>
                     <div class="item">
                       <span class="text"
-                        >[[${theme.config.blogger.motto?:'一句话介绍自己吧！'}]]</span
+                        >[[${theme.config.blogger.motto?:'Introduce yourself in one sentence!'}]]</span
                       >
                       <th:block th:if="${theme.config.other.check_baidu_collect}">
                         <span class="line">/</span>
-                        <span class="text" id="joe_baidu_record">正在检测是否收录...</span>
+                        <span class="text" id="joe_baidu_record">Checking if indexed...</span>
                       </th:block>
                     </div>
                   </div>
@@ -144,7 +144,7 @@
                               >
                                 <th:block th:if="${moment.stats.totalComment gt 0}">
                                   <span class="joe_journal_operate_item journal_comment_expander"
-                                    ><em class="journal_comment_expander_txt">查看评论</em
+                                    ><em class="journal_comment_expander_txt">View Comments</em
                                     ><i class="joe-font joe-icon-arrow-downb"></i
                                   ></span>
                                 </th:block>
@@ -156,7 +156,7 @@
                                   class="joe_journal_operate_item journal_comment_expander"
                                   th:id="'waline-journal_comment_expander-'+${moment.metadata.name}"
                                   style="display: none"
-                                  ><em class="journal_comment_expander_txt">查看评论</em
+                                  ><em class="journal_comment_expander_txt">View Comments</em
                                   ><i class="joe-font joe-icon-arrow-downb"></i
                                 ></span>
                               </th:block>
@@ -228,7 +228,10 @@
                                       imageUploader,
                                       ...waline_config_basic_object
                                     });
+                                    /* previous code
                                     const url = [[${theme.config.basic.waline.waline_serverURL+'/api/comment?type=count&url=/moments/'+moment.metadata.name}]];
+                                    */
+                                    const url = /*[[${theme.config.basic.waline.waline_serverURL+'/api/comment?type=count&url=/moments/'+moment.metadata.name}]]*/'';
                                     fetch(url).then(async (response) => {
                                       const data = await response.json();
                                       const comment_expander = 'waline-journal_comment_expander-'+/*[[${moment.metadata.name}]]*/'';

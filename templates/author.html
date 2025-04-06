@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-      th:replace="~{modules/layout :: html(title = ${tag.spec.displayName ?: '作者归档'}+'-'+${site.title},htmlType = author,header = null,leftSidebar = true,content = ~{::content}, head = null, footer = null)}"
+      th:replace="~{modules/layout :: html(title = ${tag.spec.displayName ?: 'Author Archive'}+'-'+${site.title},htmlType = author,header = null,leftSidebar = true,content = ~{::content}, head = null, footer = null)}"
 >
 <th:block th:fragment="content">
     <body>
@@ -16,9 +16,9 @@
                 <div class="joe_archive">
                     <div class="joe_archive__title">
                         <div class="joe_archive__title-title">
-                            <i class="joe-font joe-icon-feather joe_archive__title-icon"></i>以下是
+                            <i class="joe-font joe-icon-feather joe_archive__title-icon"></i>Here are
                             <span class="muted ellipsis">[[${author.spec.displayName}]]</span>
-                            <span>的文章</span>
+                            <span>articles</span>
                         </div>
                     </div>
 

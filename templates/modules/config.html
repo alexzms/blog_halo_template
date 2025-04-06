@@ -24,7 +24,7 @@
         return i > 0 && parseInt(n.substring(i + 5, n.indexOf('.', i)), 10);
       }
       detectIE() &&
-        (alert('当前站点不支持IE浏览器或您开启了兼容模式，请使用其他浏览器访问或关闭兼容模式。'),
+        (alert('This site does not support IE browsers or you have enabled compatibility mode. Please use another browser to access or disable compatibility mode.'),
         (location.href = 'https://www.baidu.com'));
     </script>
 
@@ -35,8 +35,8 @@
       }
 
       if (ThemeConfig.mode === 'development') {
-        console.log('Joe3主题配置：', ThemeConfig);
-        console.log('资源根路径：', ThemeConfig.BASE_RES_URL);
+        console.log('Joe3 theme configuration:', ThemeConfig);
+        console.log('Resource root path:', ThemeConfig.BASE_RES_URL);
       }
       // 读取主题模式
       var initThemeMode = function () {
@@ -86,7 +86,7 @@
               generateAvatarOpts = JSON.parse(generate_avatar_opts_str);
             } catch (e) {
               console.error(
-                'Joe3主题配置：生成文字性头像的配置解析失败，使用默认配置。generate_avatar_opts_str:',
+                'Joe3 theme configuration: Failed to parse the configuration for generating text avatar. Using default configuration. generate_avatar_opts_str:',
                 generate_avatar_opts_str,
                 ' ,error:',
                 e
@@ -98,7 +98,7 @@
         errorImg: function (target, src) {
           const targetSrc = target.getAttribute('src');
           console.log(
-            '加载图片失败',
+            'Failed to load image',
             ' ,srcArg:',
             src,
             ' .target.src:',
@@ -177,7 +177,7 @@
           }
 
           console.log(
-            '加载图片失败，使用默认图片:',
+            'Failed to load image, using default image:',
             nowSrc,
             ' ,oldSrc:',
             targetSrc,
@@ -199,7 +199,7 @@
           }
 
           console.log(
-            '加载图片 transparent-placeholder.png 后替换图片',
+            'Load image transparent-placeholder.png and replace image',
             ' ,srcArg:',
             src,
             ' ,target.alt:',
@@ -259,7 +259,7 @@
             target.removeAttribute('data-generated-text-avatar');
           }
 
-          console.log('加载替换后的图片:', nowSrc, ' ,target.alt:', target.getAttribute('alt'));
+          console.log('Loaded replaced image:', nowSrc, ' ,target.alt:', target.getAttribute('alt'));
           target.setAttribute('onload', null);
           target.setAttribute('src', nowSrc);
         },

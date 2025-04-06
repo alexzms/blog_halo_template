@@ -232,7 +232,12 @@
                                       imageUploader,
                                       ...waline_config_basic_object
                                     });
+                                    
+                                    /* previous code
                                     const url = [[${theme.config.basic.waline.waline_serverURL+'/api/comment?type=count&url=/moments/'+moment.metadata.name}]];
+                                    */
+
+                                    const url = /*[[${theme.config.basic.waline.waline_serverURL+'/api/comment?type=count&url=/moments/'+moment.metadata.name}]]*/'';
                                     fetch(url).then(async (response) => {
                                       const data = await response.json();
                                       const comment_expander = 'waline-journal_comment_expander-'+/*[[${moment.metadata.name}]]*/'';

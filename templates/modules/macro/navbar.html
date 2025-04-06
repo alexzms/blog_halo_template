@@ -249,12 +249,12 @@
           <ul class="joe_header__slideout-count" th:with="stats = ${siteStatsFinder.getStats()}">
             <li class="item">
               <i class="joe-font joe-icon-danganguanli"></i>
-              <span>累计撰写 <strong>[[${stats.post}]]</strong> 篇文章</span>
+              <span>Total written <strong>[[${stats.post}]]</strong> articles</span>
             </li>
             <th:block th:with="tags = ${tagFinder.listAll()}">
               <li class="item" th:with="tagNum = ${#lists.size(tags)}">
                 <i class="joe-font joe-icon-remen"></i>
-                <span>累计创建 <strong>[[${tagNum}]]</strong> 个标签</span>
+                <span>Total created <strong>[[${tagNum}]]</strong> tags</span>
               </li>
             </th:block>
             <th:block
@@ -262,7 +262,7 @@
             >
               <li class="item">
                 <i class="joe-font joe-icon-message"></i>
-                <span>累计收到 <strong>[[${stats.comment}]]</strong> 条评论</span>
+                <span>Total received <strong>[[${stats.comment}]]</strong> comments</span>
               </li>
             </th:block>
             <th:block
@@ -270,13 +270,13 @@
             >
               <li class="item">
                 <i class="joe-font joe-icon-message"></i>
-                <span class="m-waline-comment-count">累计收到 <strong>0</strong> 条评论</span>
+                <span class="m-waline-comment-count">Total received <strong>0</strong> comments</span>
               </li>
               <script
                 th:inline="javascript"
                 th:if="${theme.config.basic.comment_option=='waline'} and ${#strings.trim(theme.config.basic.waline.waline_serverURL) !=''}"
               >
-                const url = [[${theme.config.basic.waline.waline_serverURL+'/api/comment?type=count'}]];
+                const url = /*[[${theme.config.basic.waline.waline_serverURL+'/api/comment?type=count'}]]*/'';
                 fetch(url).then(async (response) => {
                   const data = await response.json();
                   document.querySelector('.m-waline-comment-count strong').innerHTML = data.data;
@@ -287,7 +287,7 @@
           <ul class="joe_header__slideout-menu panel-box">
             <li>
               <a class="link panel in" href="#" rel="nofollow">
-                <span>栏目</span>
+                <span>Categories</span>
                 <i class="joe-font joe-icon-arrow-right"></i>
               </a>
               <ul class="slides panel-body panel-box panel-side-menu" style="display: block">
@@ -459,12 +459,12 @@
       <div class="joe_header__toc">
         <div class="joe_header__toc-wrap">
           <div class="toc_top">
-            <h3>目 录<span>CONTENT</span></h3>
+            <h3>Table of Contents<span>CONTENT</span></h3>
             <img
               width="100%"
               height="150"
               th:src="${theme.config.blogger.author_bg?:'/themes/theme-Joe3/assets/img/context_bg.png'}"
-              alt="文章目录"
+              alt="Table of Contents"
               onerror="Joe.errorImg(this)"
             />
           </div>

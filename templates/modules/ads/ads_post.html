@@ -7,16 +7,16 @@
           target="_blank"
           rel="noopener noreferrer nofollow"
           th:href="${data.ads_url}"
-          title="广告"
+          title="Advertisement"
         >
           <img
             class="omit"
             width="100%"
             th:src="${data.ads_img}"
-            alt="广告"
+            alt="Advertisement"
             onerror="Joe.errorImg(this)"
           />
-          <span class="icon">广告</span>
+          <span class="icon">Advertisement</span>
         </a>
       </th:block>
       <th:block th:if="${kind == 'code'}" th:utext="${data.ads_code}"> </th:block>

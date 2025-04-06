@@ -2,7 +2,7 @@
 <html
   lang="en"
   xmlns:th="http://www.thymeleaf.org"
-  th:replace="~{modules/layout :: html(title = ${theme.config.archives.archives_title ?: '文章归档'}+'-'+${site.title},htmlType = archives,header = null,leftSidebar = true,content = ~{::content}, head = null, footer = null)}"
+  th:replace="~{modules/layout :: html(title = ${theme.config.archives.archives_title ?: 'Archives'}+'-'+${site.title},htmlType = archives,header = null,leftSidebar = true,content = ~{::content}, head = null, footer = null)}"
 >
   <th:block th:fragment="content">
     <body>
@@ -18,12 +18,12 @@
         >
           <div class="joe_main">
             <div class="joe_index joe_archives__filing">
-              <div class="title">[[${theme.config.archives.archives_title ?: '文章归档'}]]</div>
+              <div class="title">[[${theme.config.archives.archives_title ?: 'Archives'}]]</div>
               <div class="content">
                 <th:block th:if="${theme.config.archives.enable_archives_category}">
                   <div class="joe_archives__category animated fadeIn">
                     <div class="joe_archives-title">
-                      <i class="joe-font joe-icon-fenlei"></i>分类
+                      <i class="joe-font joe-icon-fenlei"></i>Categories
                     </div>
                     <ul
                       class="joe_category-list"
@@ -47,13 +47,13 @@
                 <div class="joe_archives__wrapper animated fadeIn">
                   <div class="joe_archives-title">
                     <th:block th:if="${theme.config.archives.archives_list_type == 'timeline'}">
-                      <i class="joe-font joe-icon-timeline"></i>时间轴<em
+                      <i class="joe-font joe-icon-timeline"></i>Timeline<em
                         >（[[${theme.config.archives.archives_timeline_metric == 'month' ?
-                        '月':'年'}]]）</em
+                        'Month':'Year'}]]）</em
                       >
                     </th:block>
                     <th:block th:if="${theme.config.archives.archives_list_type == 'list'}">
-                      <i class="jiewen joe-icon-riqi"></i>列表
+                      <i class="jiewen joe-icon-riqi"></i>List
                     </th:block>
                   </div>
                   <th:block th:if="${theme.config.archives.archives_list_type =='list'}">
@@ -88,11 +88,11 @@
                           <li class="item">
                             <div class="wrapper">
                               <div class="panel in">
-                                [[${archive.year}]] 年
+                                [[${archive.year}]] Year
                                 <th:block
                                   th:if="${theme.config.archives.archives_timeline_metric == 'month'}"
                                 >
-                                  [[${month.month}]] 月
+                                  [[${month.month}]] Month
                                 </th:block>
                                 <i class="joe-font joe-icon-arrow-down"></i>
                               </div>
@@ -118,7 +118,7 @@
                           <li class="item">
                             <div class="wrapper">
                               <div class="panel in">
-                                [[${archive.year}]] 年
+                                [[${archive.year}]] Year
                                 <i class="joe-font joe-icon-arrow-down"></i>
                               </div>
                               <ol class="panel-body">
