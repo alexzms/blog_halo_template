@@ -14,7 +14,7 @@
             th:if="${theme.config.post.qrcode_zfb} and ${#strings.trim(theme.config.post.qrcode_wx) != ''}"
           >
             <li>
-              <p>支付宝打赏</p>
+              <p>Alipay Donation</p>
               <img
                 th:src="${theme.config.post.qrcode_zfb}"
                 alt="qrcode alipay"
@@ -26,7 +26,7 @@
             th:if="${theme.config.post.qrcode_wx} and ${#strings.trim(theme.config.post.qrcode_wx) != ''}"
           >
             <li>
-              <p>微信打赏</p>
+              <p>WeChat Donation</p>
               <img
                 th:src="${theme.config.post.qrcode_wx}"
                 alt="qrcode weixin"
@@ -38,7 +38,7 @@
             th:if="${theme.config.post.qrcode_qq} and ${#strings.trim(theme.config.post.qrcode_qq) != ''}"
           >
             <li>
-              <p>QQ打赏</p>
+              <p>QQ Donation</p>
               <img
                 th:src="${theme.config.post.qrcode_qq}"
                 alt="qrcode qq"

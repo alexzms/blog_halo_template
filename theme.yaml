@@ -1,13 +1,13 @@
 apiVersion: theme.halo.run/v1alpha1
 kind: Theme
 metadata:
-  name: theme-Joe3
+  name: theme-joe3.0-en
 spec:
-  displayName: Theme Joe3
+  displayName: Theme Joe3.0-EN
   author:
     name: Jiewenhuang
     website: 'https://halo.run'
-  description: Halo2.0主题 Joe3
+  description: Halo2.0 Theme Joe3.0 English Version
   logo: 'https://wmimg.com/i/70/2023/08/64d3c41d5bde2.webp'
   website: 'https://www.jiewen.run'
   repo: 'https://github.com/jiewenhuang/halo-theme-joe3.0'
@@ -17,11 +17,11 @@ spec:
   require: '>=2.19.0'
   customTemplates:
     page:
-      - name: 留言板
-        description: 留言板文章
+      - name: Message Board
+        description: Message Board Page
         screenshot:
         file: page_leaving.html
-      - name: 友链
-        description: 友链模板
+      - name: Friend Links
+        description: Link Template
         screenshot:
         file: page_links.html

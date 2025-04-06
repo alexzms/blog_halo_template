@@ -138,7 +138,7 @@
               id="halo-search"
               class="submit"
               style="border-radius: 17px 17px 17px 17px"
-              aria-label="搜索按钮"
+              aria-label="Search Button"
             >
               <i class="joe-font joe-icon-search"></i>
             </button>
@@ -150,7 +150,7 @@
                     class="login_before"
                     href="#"
                     onclick="window.location.href='/console/login?redirect_uri='+window.location.href"
-                    title="登入"
+                    title="Login"
                     target="_self"
                     ><i class="jiewen joe-icon-zhanghao" target="_self"></i
                   ></a>
@@ -188,7 +188,7 @@
             <!--        </nav>-->
           </div>
 
-          <a href="javascript:SearchWidget.open()" title="搜索"
+          <a href="javascript:SearchWidget.open()" title="Search"
             ><i class="joe-font joe-icon-search joe_header__above-searchicon"></i
           ></a>
         </div>
@@ -201,7 +201,7 @@
             height="150"
             class="joe_header__slideout-image"
             th:src="${theme.config.blogger.author_bg ?: #theme.assets('/img/author_bg.jpg')}"
-            alt="侧边栏壁纸"
+            alt="Sidebar Wallpaper"
             onerror="Joe.errorImg(this)"
           />
           <div class="joe_header__slideout-author">
@@ -211,7 +211,7 @@
               class="avatar ls-is-cached lazyloaded"
               th:data-src="${theme.config.blogger.lazyload_avatar}"
               th:src="${theme.config.blogger.avatar ?: (theme.config.blogger.default_avatar ?: '/themes/theme-Joe3/assets/img/transparent-placeholder.png')}"
-              alt="博主头像"
+              alt="Author Avatar"
               th:data-text-avatar="${theme.config.blogger.name ?: site.title}"
               onload="Joe.loadedPlaceholderReplaceImg(this, 'AvatarImg')"
               onerror="Joe.errorImg(this, 'ErrAvatarImg')"
@@ -224,7 +224,7 @@
                 rel="noopener noreferrer nofollow"
                 >[[${theme.config.blogger.name ?: site.title}]]
                 <th:block th:if="${theme.config.blogger.enable_blogger_level}">
-                  <img class="level" th:src="@{/assets/svg/level_1.svg}" alt="博主等级" />
+                  <img class="level" th:src="@{/assets/svg/level_1.svg}" alt="Author Level" />
                 </th:block>
               </a>
               <p class="motto joe_motto">[[${theme.config.blogger.motto}]]</p>
@@ -444,7 +444,7 @@
       </div>
 
       <div class="joe_header__searchout">
-        <a href="javascript:SearchWidget.open()" title="搜索"></a>
+        <a href="javascript:SearchWidget.open()" title="Search"></a>
         <!--    <div class="joe_container">-->
 
         <!--      <div class="joe_header__searchout-inner">-->

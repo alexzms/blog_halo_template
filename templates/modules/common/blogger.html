@@ -8,7 +8,7 @@
         class="image lazyload"
         th:data-src="${theme.config.blogger.author_bg}"
         th:src="@{/assets/img/author_bg.jpg}"
-        alt="博主栏壁纸"
+        alt="Blogger Column Wallpaper"
         onerror="Joe.errorImg(this)"
       />
       <div class="user">
@@ -20,7 +20,7 @@
             class="avatar lazyload"
             th:data-src="${theme.config.blogger.avatar ?: (theme.config.blogger.default_avatar ?: '/themes/theme-Joe3/assets/img/transparent-placeholder.png')}"
             th:src="${theme.config.blogger.lazyload_avatar}"
-            alt="博主头像"
+            alt="Blogger Avatar"
             th:data-text-avatar="${theme.config.blogger.nickname ?: site.title}"
             onload="Joe.loadedPlaceholderReplaceImg(this, 'AvatarImg')"
             onerror="Joe.errorImg(this, 'ErrAvatarImg')"
@@ -29,14 +29,14 @@
             <img
               th:class="'avatar_frame '+${theme.config.blogger.avatar_frame}"
               th:src="@{/assets/frame/}+'/'+${theme.config.blogger.avatar_frame}+'.png'"
-              alt="挂架"
+              alt="Frame"
             />
           </th:block>
           <th:block th:if="${theme.config.blogger.avatar_widget != '0'}">
             <img
               th:class="'avatar_widget '+${theme.config.blogger.avatar_widget}"
               th:src="@{/assets/widget/}+'/'+${theme.config.blogger.avatar_widget}+'.gif'"
-              alt="相框"
+              alt="Photo Frame"
             />
           </th:block>
         </div>
@@ -44,7 +44,7 @@
           [[${theme.config.blogger.nickname ?: site.title}]]
 
           <th:block th:if="${theme.config.blogger.enable_blogger_level}">
-            <img class="level" th:src="@{/assets/svg/level_1.svg}" alt="博主等级" />
+            <img class="level" th:src="@{/assets/svg/level_1.svg}" alt="Blogger Level" />
           </th:block>
         </a>
         <th:block th:if="${theme.config.blogger.motto != ''}">
@@ -60,58 +60,58 @@
           </th:block>
         </th:block>
 
-        <!--    <p class="motto joe_motto">${user.description!'一句话介绍自己吧！'}</p>-->
+        <!--    <p class="motto joe_motto">${user.description!'Introduce yourself in one sentence!'}</p>-->
       </div>
       <div class="count" th:with="stats = ${siteStatsFinder.getStats()}">
-        <!--  <div class="item" th:title="'累计访问数 '+${stats.visit}">-->
+        <!--  <div class="item" th:title="'Total Visits '+${stats.visit}">-->
         <!--    <span class="num">[[${stats.visit}]]</span>-->
-        <!--    <span>访问量</span>-->
+        <!--    <span>Visits</span>-->
         <!--  </div>-->
-        <!--    搭配A-->
+        <!--    Combination A-->
         <th:block th:if="${theme.config.blogger.overview_type == 'A'}">
-          <div class="item" th:title="'累计分类数 '+${stats.category}">
+          <div class="item" th:title="'Total Categories '+${stats.category}">
             <span class="num">[[${stats.category}]]</span>
-            <span>分类数</span>
+            <span>Categories</span>
           </div>
           <th:block th:with="tags = ${tagFinder.listAll()}">
             <div
               th:with="tagNum = ${#lists.size(tags)}"
               class="item"
-              th:title="'累计标签数 '+${tagNum}"
+              th:title="'Total Tags '+${tagNum}"
             >
               <span class="num">[[${tagNum}]]</span>
-              <span>标签数</span>
+              <span>Tags</span>
             </div>
           </th:block>
 
-          <div class="item" th:title="'累计文章数 '+${stats.post}">
+          <div class="item" th:title="'Total Posts '+${stats.post}">
             <span class="num">[[${stats.post}]]</span>
-            <span>文章数</span>
+            <span>Posts</span>
           </div>
         </th:block>
-        <!--    搭配B-->
+        <!--    Combination B-->
         <th:block th:if="${theme.config.blogger.overview_type == 'B'}">
-          <div class="item" th:title="'累计分类数 '+${stats.category}">
+          <div class="item" th:title="'Total Categories '+${stats.category}">
             <span class="num">[[${stats.category}]]</span>
-            <span>分类数</span>
+            <span>Categories</span>
           </div>
 
           <th:block th:with="tags = ${tagFinder.listAll()}">
             <div
               th:with="tagNum = ${#lists.size(tags)}"
               class="item"
-              th:title="'累计标签数 '+${tagNum}"
+              th:title="'Total Tags '+${tagNum}"
             >
               <span class="num">[[${tagNum}]]</span>
-              <span>标签数</span>
+              <span>Tags</span>
             </div>
           </th:block>
           <th:block
             th:if="${theme.config.basic.comment_option == 'default'} or ${#strings.trim(theme.config.basic.waline.waline_serverURL) ==''}"
           >
-            <div class="item" th:title="'累计评论数 '+${stats.comment}">
+            <div class="item" th:title="'Total Comments '+${stats.comment}">
               <span class="num">[[${stats.comment}]]</span>
-              <span>评论数</span>
+              <span>Comments</span>
             </div>
           </th:block>
           <th:block
@@ -119,26 +119,26 @@
           >
             <div class="item waline-comment" title="">
               <span class="num">0</span>
-              <span>评论数</span>
+              <span>Comments</span>
             </div>
           </th:block>
         </th:block>
-        <!--    搭配C-->
+        <!--    Combination C-->
         <th:block th:if="${theme.config.blogger.overview_type == 'C'}">
-          <div class="item" th:title="'累计分类数 '+${stats.category}">
+          <div class="item" th:title="'Total Categories '+${stats.category}">
             <span class="num">[[${stats.category}]]</span>
-            <span>分类数</span>
+            <span>Categories</span>
           </div>
-          <div class="item" th:title="'累计文章数 '+${stats.post}">
+          <div class="item" th:title="'Total Posts '+${stats.post}">
             <span class="num">[[${stats.post}]]</span>
-            <span>文章数</span>
+            <span>Posts</span>
           </div>
           <th:block
             th:if="${theme.config.basic.comment_option == 'default'} or ${#strings.trim(theme.config.basic.waline.waline_serverURL) ==''}"
           >
-            <div class="item" th:title="'累计评论数 '+${stats.comment}">
+            <div class="item" th:title="'Total Comments '+${stats.comment}">
               <span class="num">[[${stats.comment}]]</span>
-              <span>评论数</span>
+              <span>Comments</span>
             </div>
           </th:block>
           <th:block
@@ -146,33 +146,33 @@
           >
             <div class="item waline-comment" title="">
               <span class="num">0</span>
-              <span>评论数</span>
+              <span>Comments</span>
             </div>
           </th:block>
         </th:block>
-        <!--    搭配D-->
+        <!--    Combination D-->
         <th:block th:if="${theme.config.blogger.overview_type == 'D'}">
           <th:block th:with="tags = ${tagFinder.listAll()}">
             <div
               th:with="tagNum = ${#lists.size(tags)}"
               class="item"
-              th:title="'累计标签数 '+${tagNum}"
+              th:title="'Total Tags '+${tagNum}"
             >
               <span class="num">[[${tagNum}]]</span>
-              <span>标签数</span>
+              <span>Tags</span>
             </div>
           </th:block>
 
-          <div class="item" th:title="'累计文章数 '+${stats.post}">
+          <div class="item" th:title="'Total Posts '+${stats.post}">
             <span class="num">[[${stats.post}]]</span>
-            <span>文章数</span>
+            <span>Posts</span>
           </div>
           <th:block
             th:if="${theme.config.basic.comment_option == 'default'} or ${#strings.trim(theme.config.basic.waline.waline_serverURL) ==''}"
           >
-            <div class="item" th:title="'累计评论数 '+${stats.comment}">
+            <div class="item" th:title="'Total Comments '+${stats.comment}">
               <span class="num">[[${stats.comment}]]</span>
-              <span>评论数</span>
+              <span>Comments</span>
             </div>
           </th:block>
           <th:block
@@ -180,7 +180,7 @@
           >
             <div class="item waline-comment" title="">
               <span class="num">0</span>
-              <span>评论数</span>
+              <span>Comments</span>
             </div>
           </th:block>
         </th:block>
@@ -216,7 +216,7 @@
           fetch(url).then(async (response) => {
             const data = await response.json();
             document.querySelector('.waline-comment .num').innerHTML = data.data;
-            document.querySelector('.waline-comment').title = '累计评论数:' + data.data;
+            document.querySelector('.waline-comment').title = 'Total Comments:' + data.data;
           });
         </script>
       </th:block>

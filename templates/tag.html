@@ -8,7 +8,7 @@
     <body>
       <div id="Joe">
         <th:block th:replace="~{modules/macro/navbar :: navbar}" />
-        <!--          首页大图-->
+        <!--          Home Large Image-->
         <th:block th:if="${theme.config.beauty.enable_big_banner}">
           <th:block th:replace="~{modules/macro/big_banner :: big_banner(${title})}" />
         </th:block>
@@ -20,9 +20,9 @@
             <div class="joe_archive">
               <div class="joe_archive__title">
                 <div class="joe_archive__title-title">
-                  <i class="joe-font joe-icon-feather joe_archive__title-icon"></i>以下是
+                  <i class="joe-font joe-icon-feather joe_archive__title-icon"></i>Here are
                   <span class="muted ellipsis">[[${tag.spec.displayName}]]</span>
-                  <span>相关的文章</span>
+                  <span>related articles</span>
                 </div>
               </div>
 

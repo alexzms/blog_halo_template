@@ -1,5 +1,4 @@
-
-<h1 align="center"> Halo Theme Joe3  </h1>
+<h1 align="center"> Halo Theme Joe3.0-EN  </h1>
 
 <p class="badge-row" align="center">
   <a href="https://halo.run" target="_blank">
@@ -18,47 +17,47 @@
 <img width="100%" src="https://wmimg.com/i/70/2023/08/64d3c41d5bde2.webp">
 </p>
 
-预览：[Jiewen's Blog](https://www.jiewen.run/?preview-theme=theme-Joe3)
+Preview: [Jiewen's Blog](https://www.jiewen.run/?preview-theme=theme-Joe3)
 
-文档：部分配置请参考 [Joe3不完全使用指导指南](https://www.jiewen.run/archives/joe3use)
-> halo-theme-Joe3 是一款 [Halo2.0](https://halo.run/) 的博客主题  
-> 由[halo-theme-joe2.0](https://github.com/qinhua/halo-theme-joe2.0)适配而来，感谢原作者的无私奉献
+Documentation: For some configurations, please refer to [Joe3 Incomplete User Guide](https://www.jiewen.run/archives/joe3use)
+> halo-theme-Joe3.0-EN is a blog theme for [Halo2.0](https://halo.run/)  
+> Adapted from [halo-theme-joe2.0](https://github.com/qinhua/halo-theme-joe2.0), thanks to the original author for the selfless contribution
 
-## 安裝
+## Installation
 
-### 下载安装
-下载[releases](https://github.com/jiewenhuang/halo-theme-joe3.0/releases)或者直接[下载代码](https://github.com/jiewenhuang/halo-theme-joe3.0)，通过 Halo Console 后台主题安装处上传即可。
+### Download and Install
+Download from [releases](https://github.com/jiewenhuang/halo-theme-joe3.0/releases) or directly [download the code](https://github.com/jiewenhuang/halo-theme-joe3.0), then upload through the Halo Console backend theme installation.
 
-## 使用说明
-> 1、首次使用请先把主题所有配置保存一遍  
-> 2、部分功能使用插件进行实现  
-> 3、请配合Halo2.8.0及以上版本使用  
-> 4、菜单栏的图标请使用[iconfont](https://www.iconfont.cn/)的图标，需要填入Font Family 和图标代码例如：`jiewen joe-icon-tupian`  
-> 5、使用自定义标签样式请以插入HTML文本形式使用，标签请参考[Joe3部分样式](https://www.jiewen.run/archives/joe3style)或者直接使用插件标签
+## Instructions
+> 1. For first-time use, please save all theme configurations first  
+> 2. Some functions are implemented using plugins  
+> 3. Please use with Halo 2.8.0 and above  
+> 4. For menu icons, please use [iconfont](https://www.iconfont.cn/) icons, you need to fill in the Font Family and icon code, for example: `jiewen joe-icon-tupian`  
+> 5. To use custom tag styles, please use them in the form of inserted HTML text. For tags, please refer to [Joe3 Partial Styles](https://www.jiewen.run/archives/joe3style) or use plugin tags directly
 
-- [x] 卡片化设计
-- [x] 响应式主题
-- [x] 深色模式
-- [X] 文章目录
-- [X] 代码高亮/语言/复制）
-- [x] [文章搜索](https://github.com/halo-sigs/plugin-search-widget)
-- [x] 显示字数统计
-- [x] 显示相关文章
-- [X] [评论系统](https://github.com/halo-sigs/plugin-comment-widget)
-- [x] [友情链接](https://github.com/halo-sigs/plugin-links)  
-- [x] [瞬时](https://github.com/halo-sigs/plugin-moments)  
-- [x] [图库](https://github.com/halo-sigs/plugin-photos)  
-- [x] 其他功能
+- [x] Card design
+- [x] Responsive theme
+- [x] Dark mode
+- [X] Article table of contents
+- [X] Code highlighting/language/copy
+- [x] [Article search](https://github.com/halo-sigs/plugin-search-widget)
+- [x] Display word count
+- [x] Show related articles
+- [X] [Comment system](https://github.com/halo-sigs/plugin-comment-widget)
+- [x] [Friend links](https://github.com/halo-sigs/plugin-links)  
+- [x] [Moments](https://github.com/halo-sigs/plugin-moments)  
+- [x] [Gallery](https://github.com/halo-sigs/plugin-photos)  
+- [x] Other features
 
-## 主题配置
+## Theme Configuration
 
-### 基本设置
+### Basic Settings
 
-#### Waline设置
+#### Waline Settings
 
-##### Waline基础配置
+##### Waline Basic Configuration
 
-该配置项可以对Waline进行自定义基础配置，内容为json格式，如果配置未生效，请先检查填入的内容是否为json格式，可以前往[JSON校验网站](https://www.json.cn/)进行格式校验。为了方便用户填写，这里提供如下样例，具体所代表的含义以及更多配置项请参考[Waline官网](https://waline.js.org/)。
+This configuration item allows custom basic configuration for Waline in JSON format. If the configuration doesn't take effect, please first check if the entered content is in JSON format. You can go to [JSON validation website](https://www.json.cn/) for format validation. To make it easier for users to fill in, here is an example, please refer to [Waline official website](https://waline.js.org/) for specific meanings and more configuration items.
 
 ```json
 {
@@ -66,7 +65,7 @@
   "reaction":true,
   "login":"force",
   "locale": {
-     "placeholder":"欢迎评论啦啦啦"
+     "placeholder":"Welcome to comment"
   },
    "emoji": [
       "//unpkg.com/@waline/emojis@1.2.0/weibo",
@@ -75,31 +74,31 @@
 }
 ```
 
-##### Waline图片上传配置
+##### Waline Image Upload Configuration
 
-该配置项可以配置Waline的图片上传方式
+This configuration item can configure the image upload method for Waline
 
-+ 默认
++ Default
 
-默认的图片上传方式上传的图片最大只能128Kb
+The default image upload method can only upload images up to 128Kb
 
-+ 兰空图床
++ LskyPro
 
-该配置项可以配置Waline的图片上传至兰空图床，需要自建兰空图床服务
+This configuration item can configure Waline to upload images to LskyPro, requiring a self-hosted LskyPro service
 
-##### 兰空图床上传设置
+##### LskyPro Upload Settings
 
-+ 兰空图床服务端地址
++ LskyPro Server URL
 
-兰空图床服务端地址，如 https://img.example.com/api/v1/upload 不要加结尾反斜杠
+LskyPro server address, e.g., https://img.example.com/api/v1/upload (do not add a trailing slash)
 
-+ 兰空图床Token
++ LskyPro Token
 
-兰空图床Token，如 `2|1bJbwlqBfnggmOMEZqXT5XusaIwqiZjCDs7r1Ob5`，通过配置Token可以进行图片上传的权限控制，如果为空则以游客身份上传（需要在兰空图床开放游客上传的权限）
+LskyPro Token, e.g., `2|1bJbwlqBfnggmOMEZqXT5XusaIwqiZjCDs7r1Ob5`. By configuring the Token, you can control image upload permissions. If empty, uploads will be made as a guest (requires LskyPro to allow guest uploads)
 
-如何获取Token?
+How to get a Token?
 
-通过兰空图床api获取，请求示例如下：
+Get it through the LskyPro API, request example as follows:
 
 ```bash
 curl -X POST https://img.example.com/api/v1/tokens \
@@ -110,7 +109,7 @@ curl -X POST https://img.example.com/api/v1/tokens \
 }'
 ```
 
-如果出现如下报错，请在末尾加入参数`-k`来忽略证书验证
+If you encounter the following error, add the parameter `-k` at the end to ignore certificate verification
 
 ```bash
 curl: (60) schannel: SEC_E_UNTRUSTED_ROOT (0x80090325) - More details here: https://curl.se/docs/sslcerts.html
@@ -119,73 +118,73 @@ curl failed to verify the legitimacy of the server and therefore could not
 establish a secure connection to it.
 ```
 
-返回结果示例：
+Example response:
 
 ```json
 {"status":true,"message":"success","data":{"token":"2|1bJbwlqBfnggmOMEZqXT5XusaIwqiZjCDs7r1Ob5"}}
 ```
 
-### 博主信息
+### Blogger Information
 
-#### 展示天气信息
+#### Display Weather Information
 
->注意：天气的文字颜色为白色，考虑到用户使用的背景不同，如果不合适，请自行通过代码注入修改字体颜色以适配自己的博客
+>Note: The weather text color is white. Considering that users may use different backgrounds, if it's not suitable, please modify the font color through code injection to adapt to your blog
 
-改配置项配置博主信息是否展示天气信息
+This configuration item configures whether to display weather information in the blogger information
 
-#### 天气插件token
+#### Weather Plugin Token
 
-由于和风天气插件已经停止服务，所以将其替换为心知天气插件
+Since the Hefeng Weather plugin has stopped service, it has been replaced with the Seniverse Weather plugin
 
-1. 注册账号
+1. Register an account
 
-前往[心知天气官网](https://www.seniverse.com/)注册账号并登录控制台
+Go to the [Seniverse Weather official website](https://www.seniverse.com/) to register an account and log in to the console
 
-2. 添加产品
+2. Add product
 
-具体操作如下图所示：
+The specific operation is shown in the figure below:
 
-![添加产品](docs/joe3_20240915184016.webp)
+![Add product](docs/joe3_20240915184016.webp)
 
-3. 配置插件并获取token
+3. Configure the plugin and get the token
 
-前往该[网站](https://www.seniverse.com/widgetv3)配置插件，目前该网站在控制台中不可见，不知道是不是也要停止服务了😅
+Go to this [website](https://www.seniverse.com/widgetv3) to configure the plugin. Currently, this website is not visible in the console, not sure if it will also stop service 😅
 
-首先配置插件：
+First, configure the plugin:
 
-![配置插件](docs/joe3_20240915185024.webp)
+![Configure plugin](docs/joe3_20240915185024.webp)
 
-其次点击生成代码获取token：
+Second, click generate code to get the token:
 
-![获取token](docs/joe3_20240915185129.webp)
+![Get token](docs/joe3_20240915185129.webp)
 
-## 预览
+## Preview
 
 WIP
 ## TODO
-- [ ] 优化图库
+- [ ] Optimize gallery
 - [ ] ......
 
 
-### 🏭 贡献
+### 🏭 Contribution
 
-> 如果你想帮助完善 `Joe3.0` 主题，请：
+> If you want to help improve the `Joe3.0` theme, please:
 
-- 点 `star`
-- 提 `issue`
-- 修 `bugs`
-- 推 `pr`
+- Star
+- Submit issues
+- Fix bugs
+- Submit PRs
 
 <br>  
 
-### 奉献提示
-~~此仓库分为main和dev分支，如何您想奉献代码，请fork dev分支，开发完成后提交pr到dev分支，dev分支会定期合并到main分支，main分支为稳定版本且dev分支才是最新代码，不接受pr。~~  
-现在只维护main分支，dev分支不再维护，如有需要请直接提交pr到main分支。
+### Contribution Tips
+~~This repository is divided into main and dev branches. If you want to contribute code, please fork the dev branch, complete development, and submit a PR to the dev branch. The dev branch will be periodically merged into the main branch. The main branch is the stable version, and the dev branch has the latest code. PRs to main are not accepted.~~  
+Now only the main branch is maintained, the dev branch is no longer maintained. If needed, please submit PRs directly to the main branch.
 
 
-### 🙆‍♂️ 感谢
+### 🙆‍♂️ Thanks
 
-在此感谢以下项目提供的支持：
+Thanks to the following projects for their support:
 
 - [Halo](https://halo.run)
 - [theme-starter](https://github.com/halo-dev/theme-starter)
@@ -202,11 +201,11 @@ WIP
 
 <br>
 
-### 交流群
-QQ群号（929708466）欢迎大家前来交流分享  
+### Discussion Group
+QQ Group (929708466) Welcome to join for discussion and sharing  
 
-![QQ群](https://www.jiewen.run/upload/IMG_3508(20240717-140309).JPG)  
+![QQ Group](https://www.jiewen.run/upload/IMG_3508(20240717-140309).JPG)  
 
-### TinyTale小程序  
-[TinyTale Halo微信小程序正式版发布](https://www.jiewen.run/archives/TinyTale-formal-edition)
+### TinyTale Mini Program  
+[TinyTale Halo WeChat Mini Program Official Version Released](https://www.jiewen.run/archives/TinyTale-formal-edition)
 ![TinyTale](https://www.jiewen.run/upload/111.png)

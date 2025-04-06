@@ -36,7 +36,7 @@
           <i class="joe-font joe-icon-huifu"></i>
           <div class="share-icon-list">
             <th:block th:if="${theme.config.post.enable_share_weixin}">
-              <a id="share_to_weixin" href="javascript:;" title="分享到微信">
+              <a id="share_to_weixin" href="javascript:;" title="Share to WeChat">
                 <svg
                   class="icon"
                   viewBox="0 0 1024 1024"
@@ -55,16 +55,16 @@
                 </svg>
                 <div class="qrcode_wrapper animated bounceIn">
                   <div class="qrcode_wx"></div>
-                  <p>微信扫一扫</p>
+                  <p>Scan with WeChat</p>
                 </div>
               </a>
             </th:block>
             <th:block th:if="${theme.config.post.enable_share_weibo}">
               <a
-                th:href="'http://service.weibo.com/share/share.php?sharesource=weibo&title=分享：『'+${post.spec.title}+'』，作者：'+${post.owner.displayName}+'，原文链接：'+${site_url}+${post.status.permalink}+'&pic='+${post.spec.cover}"
+                th:href="'http://service.weibo.com/share/share.php?sharesource=weibo&title=Share: 『'+${post.spec.title}+'』, Author: '+${post.owner.displayName}+', Original link: '+${site_url}+${post.status.permalink}+'&pic='+${post.spec.cover}"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="分享到新浪微博"
+                title="Share to Sina Weibo"
               >
                 <svg
                   class="icon"
@@ -90,10 +90,10 @@
             </th:block>
             <th:block th:if="${theme.config.post.enable_share_qq}">
               <a
-                th:href="'https://connect.qq.com/widget/shareqq/index.html?url='+${site_url}+${post.status.permalink}+'&title=『'+${post.spec.title}+'』，作者：'+${post.owner.displayName}+'&pics='+${post.spec.cover}"
+                th:href="'https://connect.qq.com/widget/shareqq/index.html?url='+${site_url}+${post.status.permalink}+'&title=『'+${post.spec.title}+'』, Author: '+${post.owner.displayName}+'&pics='+${post.spec.cover}"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="分享到QQ"
+                title="Share to QQ"
               >
                 <svg
                   class="icon"
@@ -111,10 +111,10 @@
             </th:block>
             <th:block th:if="${theme.config.post.enable_share_qzone}">
               <a
-                th:href="'https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+${site_url}+${post.status.permalink}+'&sharesource=qzone&title=『'+${post.spec.title}+'』，作者：'+${post.owner.displayName}+'&pics='+${post.spec.cover}+'&summary='+${post.status.excerpt}"
+                th:href="'https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+${site_url}+${post.status.permalink}+'&sharesource=qzone&title=『'+${post.spec.title}+'』, Author: '+${post.owner.displayName}+'&pics='+${post.spec.cover}+'&summary='+${post.status.excerpt}"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="分享到QQ空间"
+                title="Share to QQ Zone"
               >
                 <svg
                   class="icon"
@@ -135,7 +135,7 @@
                 class="icon-share-link"
                 href="javascript:;"
                 rel="noopener noreferrer"
-                title="复制文章链接"
+                title="Copy Article Link"
                 th:data-post-title="${post.spec.title}"
                 th:data-post-description="${post.status.excerpt}"
                 th:data-template="${theme.config.post.share_link_template}"

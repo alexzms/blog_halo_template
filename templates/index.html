@@ -39,7 +39,7 @@
               <div class="joe_index__article">
                 <div class="joe_index__title">
                   <ul class="joe_index__title-title passage-list-tabs default">
-                    <li class="item active" data-type="1">最新文章</li>
+                    <li class="item active" data-type="1">Latest Articles</li>
                   </ul>
                   <th:block
                     th:if="${theme.config.social.qq_group != ''} and ${theme.config.social.qq_group != null}"
@@ -88,7 +88,7 @@
                 class="joe_load_container"
                 th:with="nextPage = ${posts.totalPages == posts.page?'':posts.nextUrl}"
               >
-                <div class="joe_load" th:data-next="@{${nextPage}}">查看更多</div>
+                <div class="joe_load" th:data-next="@{${nextPage}}">View More</div>
               </div>
             </th:block>
           </div>

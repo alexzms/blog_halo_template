@@ -5,203 +5,225 @@ metadata:
 spec:
   forms:
     - group: basic
-      label: 基本设置
+      label: Basic Settings
       formSchema:
         - $formkit: select
           name: theme_mode
-          label: 主题模式
+          label: Theme Mode
           value: 'user'
-          help: '设置博客的主题模式（用户/自动/浅色/暗黑），默认为用户模式，仅在用户模式下页面才有主题切换按钮，自动模式下根据时间自动切换'
+          help: 'Set the theme mode of the blog (user/auto/light/dark). Default is user mode. The theme switching button is only available in user mode. In auto mode, it switches automatically based on time.'
           options:
             - value: user
-              label: 用户模式
+              label: User Mode
             - value: auto
-              label: 自动模式
+              label: Auto Mode
             - value: light
-              label: 浅色模式
+              label: Light Mode
             - value: dark
-              label: 暗黑模式
+              label: Dark Mode
         - $formkit: radio
           name: comment_option
           id: comment_option
           value: default
-          label: 评论系统
-          help: '选择使用的评论系统'
+          label: Comment System
+          help: 'Choose the comment system to use'
           options:
             - value: default
-              label: 默认
+              label: Default
             - value: waline
               label: Waline
         - $formkit: group
           name: waline
           if: "$get(comment_option).value === 'waline'"
-          label: Waline 设置
+          label: Waline Settings
           id: waline
           children:
             - $formkit: text
               name: waline_serverURL
-              label: Waline 服务端地址
+              label: Waline Server URL
               value: ''
-              help: 'Waline 服务端地址，如 https://waline-server.herokuapp.com 不要加结尾反斜杠'
+              help: 'Waline server address, e.g., https://waline-server.herokuapp.com (without trailing slash)'
             - $formkit: text
               name: waline_css
-              label: Waline CSS地址
+              label: Waline CSS URL
               value: 'https://unpkg.com/@waline/client@v2/dist/waline.css'
-              help: Waline 的主样式地址
+              help: Main CSS address for Waline
             - $formkit: text
               name: waline_js_comment
-              label: 用于评论的 JS 地址
+              label: JS URL for Comments
               value: 'https://unpkg.com/@waline/client@v2/dist/waline.mjs'
-              help: Waline 的评论 JS 地址
+              help: JS address for Waline comments
             - $formkit: text
               name: waline_js_leaving
-              label: 功能 JS
+              label: Feature JS
               value: 'https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.mjs'
-              help: 用于加载留言板和最新评论的 JS 地址
+              help: JS address for loading message board and latest comments
             - $formkit: text
               name: waline_js_list
-              label: 列表 JS
+              label: List JS
               value: 'https://unpkg.com/@waline/client@v2/dist/comment.mjs'
-              help: 首页加载显示评论数的 JS 地址
+              help: JS address for displaying comment count on homepage
             - $formkit: code
               name: waline_config_basic_json
-              label: Waline 基础配置
+              label: Waline Basic Configuration
               value: ''
-              help: 'Waline 基础配置（json格式），更多配置项请参考 Waline官网：https://waline.js.org'
+              help: 'Basic Waline configuration (JSON format). For more options, refer to Waline official website: https://waline.js.org'
               language: json
             - $formkit: radio
               name: waline_config_imageUpload_option
               id: waline_config_imageUpload_option
               value: default
-              label: Waline 图片上传配置
-              help: '选择图片上传方式'
+              label: Waline Image Upload Configuration
+              help: 'Choose image upload method'
               options:
                 - value: default
-                  label: 默认
+                  label: Default
                 - value: lskypro
-                  label: 兰空图床
+                  label: LskyPro
             - $formkit: group
               name: lskypro
               if: "$get(waline_config_imageUpload_option).value === 'lskypro'"
-              label: 兰空图床上传 设置
+              label: LskyPro Upload Settings
               id: lskypro
               children:
                 - $formkit: text
                   name: lskypro_apiURL
-                  label: 兰空图床 服务端地址
+                  label: LskyPro Server URL
                   value: ''
-                  help: '兰空图床 服务端地址，如 https://img.example.com/api/v1/upload 不要加结尾反斜杠'
+                  help: 'LskyPro server address, e.g., https://img.example.com/api/v1/upload (without trailing slash)'
                 - $formkit: text
                   name: lskypro_apiTOKEN
-                  label: 兰空图床 Token
+                  label: LskyPro Token
                   value: ''
-                  help: '兰空图床 Token，如 2|1bJbwlqBfnggmOMEZqXT5XusaIwqiZjCDs7r1Ob5'
+                  help: 'LskyPro Token, e.g., 2|1bJbwlqBfnggmOMEZqXT5XusaIwqiZjCDs7r1Ob5'
 
         - $formkit: radio
           name: enable_source_link
           id: enable_source_link
-          label: '是否使用外部资源地址'
-          help: '使用外部请将整个assets目录上传'
+          label: 'Use External Resource Address'
+          help: 'If using external, upload the entire assets directory'
           value: false
           options:
             - value: false
-              label: 默认
+              label: Default
             - value: true
-              label: 外部
+              label: External
         - $formkit: text
           name: source_link
-          label: 外部资源地址
+          label: External Resource URL
           value: ''
-          help: '如果你的资源地址是https://example.com/assets/js/min/index.min.js，那么这里填写https://example.com'
+          help: 'If your resource URL is https://example.com/assets/js/min/index.min.js, enter https://example.com here'
 
         - $formkit: text
           name: mode_color_light
-          label: 主题色（浅色）
+          label: Theme Color (Light)
           value: '#fb6c28'
-          help: '浅色主题色色值，默认#fb6c28'
+          help: 'Light theme color value, default is #fb6c28'
         - $formkit: text
           name: mode_color_dark
-          label: 主题色（暗黑）
+          label: Theme Color (Dark)
           value: '#9999ff'
-          help: '暗黑主题色色值，默认#9999ff'
+          help: 'Dark theme color value, default is #9999ff'
         - $formkit: select
           name: enable_background_light
           value: false
-          label: 开启浅色模式背景图
-          help: '需要配置好浅色模式背景图后才有效'
+          label: Enable Light Mode Background Image
+          help: 'Only effective after configuring the light mode background image'
           options:
             - value: true
-              label: 是
+              label: Yes
             - value: false
-              label: 否
+              label: No
         - $formkit: attachment
           name: background_light_mode
-          label: 背景图（浅色模式）
-          help: '设置浅色模式下的背景图（建议webp格式），为空则只显示默认背景色'
+          label: Background Image (Light Mode)
+          help: 'Set background image for light mode (webp format recommended). If empty, shows default background color only'
           value: ''
         - $formkit: select
           name: enable_background_dark
           value: false
-          label: 开启暗黑模式背景图
-          help: '需要配置好暗黑模式背景图后才有效'
+          label: Enable Dark Mode Background Image
+          help: 'Only effective after configuring the dark mode background image'
           options:
             - value: true
-              label: 是
+              label: Yes
             - value: false
-              label: 否
+              label: No
         - $formkit: attachment
           name: background_dark_mode
-          label: 背景图（暗黑模式）
-          help: '设置暗黑模式下的背景图（建议webp格式），为空则只显示默认背景色'
+          label: Background Image (Dark Mode)
+          help: 'Set background image for dark mode (webp format recommended). If empty, shows default background color only'
           value: ''
         - $formkit: number
           name: content_max_width
-          label: 内容区最大宽度
+          label: Maximum Content Width
           value: 1320
-          help: '限制内容区域的宽度，单位px,默认1320px'
+          help: 'Limit the width of the content area, unit is px, default is 1320px'
         - $formkit: select
           name: enable_random_img_api
           id: enable_random_img_api
           value: false
-          label: 启用随机图
-          help: '是否启用随机图API,无封面时使用'
+          label: Enable Random Images
+          help: 'Whether to enable random image API when no cover is available'
           options:
             - value: true
-              label: 是
+              label: Yes
             - value: false
-              label: 否
+              label: No
         - $formkit: text
           name: random_img_api_url
           value: 'https://imgapi.xl0408.top/index.php'
-          label: 随机图api
-          help: '输入适当的api地址'
+          label: Random Image API
+          help: 'Enter appropriate API address'
         - $formkit: text
           name: light_time_scope
-          label: 浅色模式生效时间范围
+          label: Light Mode Effective Time Range
           value: '5:00~19:00'
-          help: '设置浅色模式自动生效的时间范围，范围之外为暗黑模式（仅在主题模式为 “自动模式” 下生效），请严格按照规定格式设置，否则会导致报错'
+          help: 'Set the time range for automatic light mode (outside this range is dark mode). Only effective when theme mode is "Auto Mode". Please follow the specified format strictly to avoid errors.'
         - $formkit: group
           name: icp_police
-          label: 备案信息
+          label: Registration Information
           children:
             - $formkit: text
               name: icp
-              label: ICP 备案号
+              label: ICP Registration Number
               value: ''
-              help: 'ICP 备案信息将展示在页脚中，不填不展示（示例：鄂ICP备20001234号-1）'
+              help: 'ICP registration information will be displayed in the footer. Leave empty to hide. (Example: 鄂ICP备20001234号-1)'
             - $formkit: text
               name: icp_link
-              label: ICP备案跳转链接
+              label: ICP Registration Link
               value: https://beian.miit.gov.cn/
             - $formkit: text
               name: police
-              label: 公网安备号
+              label: Public Network Security Number
               value: ''
-              help: '公网安备信息将展示在页脚中，不填不展示，也可在 “页脚” 一栏中单独关闭（示例：鄂公网安备42011102001234号）'
-            - $formkit: text
-              name: gongan_link
-              label: 公安联网备案跳转链接
-              value: https://beian.mps.gov.cn/#/query/webSearch
+              help: 'Public network security information will be displayed in the footer. Leave empty to hide. Can also be disabled separately in the "Footer" section. (Example: 鄂公网安备42011102001234号)'
+        - $formkit: text
+          name: gongan_link
+          label: Public Security Bureau Link
+          value: http://www.beian.gov.cn/portal/registerSystemInfo
+        - $formkit: radio
+          name: global_link_target
+          value: 'default'
+          label: Link Behavior (Global-Content Area)
+          help: 'Configure the behavior of a tags in the "content area (excluding navigation bar and footer)". Three options are provided: [Default: follow theme default behavior; Current page: open link in current page; New tab: open link in new tab]'
+          options:
+            - value: default
+              label: Default
+            - value: self
+              label: Current Page
+            - value: blank
+              label: New Tab
+        - $formkit: radio
+          name: nav_glass_style
+          value: false
+          label: Frosted Glass Effect
+          help: 'Whether to enable the navigation bar frosted glass effect (disabled by default to save performance, only effective when "Navigation Bar Fixed" is enabled)'
+          options:
+            - value: true
+              label: Yes
+            - value: false
+              label: No
 
     - group: home
       label: 首页
@@ -620,7 +642,7 @@ spec:
           name: link_behavior
           label: 链接跳转行为（全局-内容区域）
           value: 'default'
-          help: '配置网站 “内容区域（不包含导航条和页脚）” 的 a 标签跳转行为，暂时提供 3 种供选择【默认：遵循主题默认行为；当前页：在当前页打开链接；新标签：在新标签页中打开链接】'
+          help: '配置网站 "内容区域（不包含导航条和页脚）" 的 a 标签跳转行为，暂时提供 3 种供选择【默认：遵循主题默认行为；当前页：在当前页打开链接；新标签：在新标签页中打开链接】'
           options:
             - value: default
               label: 默认
@@ -994,7 +1016,7 @@ spec:
           name: enable_glass_blur
           label: 毛玻璃效果
           value: false
-          help: '是否开启导航条毛玻璃效果（默认关闭以节省性能，仅在“导航条吸顶”开启时生效）'
+          help: '是否开启导航条毛玻璃效果（默认关闭以节省性能，仅在"导航条吸顶"开启时生效）'
           options:
             - value: true
               label: 开启
@@ -1360,7 +1382,7 @@ spec:
           name: enable_code_line_number
           label: 代码行号
           value: false
-          help: '开启代码块行号功能（“自动换行” 开启时无效）'
+          help: '开启代码块行号功能（"自动换行" 开启时无效）'
           options:
             - value: true
               label: 开启
@@ -1390,7 +1412,7 @@ spec:
           name: enable_fold_long_code
           label: 自动折叠长代码块
           value: false
-          help: '自动折叠 <文章页> 中内容很长的代码块，提高阅读效率，此操作会出现布局偏移，可能带来一些滚动相关问题，如无必要不建议开启（必须先开启“代码折叠”选项，否则无效，也可以通过元数据 enable_fold_long_code 单独控制）'
+          help: '自动折叠 <文章页> 中内容很长的代码块，提高阅读效率，此操作会出现布局偏移，可能带来一些滚动相关问题，如无必要不建议开启（必须先开启"代码折叠"选项，否则无效，也可以通过元数据 enable_fold_long_code 单独控制）'
           options:
             - value: true
               label: 开启
@@ -1512,7 +1534,7 @@ spec:
           name: qq_text
           label: 欢迎语
           value: '欢迎加入QQ交流群'
-          help: 'QQ交流群按钮展示的文案，对应首页 “推荐文章” 右侧的 “欢迎加入QQ交流群”'
+          help: 'QQ交流群按钮展示的文案，对应首页 "推荐文章" 右侧的 "欢迎加入QQ交流群"'
 
     - group: aside
       label: 侧边栏
@@ -1784,7 +1806,7 @@ spec:
                   id: tag_cloud_type
                   label: 标签云类型
                   value: '3d'
-                  help: '设置标签云的展示形式，默认为 “3D标签云”，标签太多或卡顿时建议限制展示的标签数量'
+                  help: '设置标签云的展示形式，默认为 "3D标签云"，标签太多或卡顿时建议限制展示的标签数量'
                   options:
                     - value: 3d
                       label: 3D标签云
@@ -1831,7 +1853,7 @@ spec:
                   id: category_cloud_type
                   label: 分类云类型
                   value: '3d'
-                  help: '设置标签云的展示形式，默认为 “3D分类云”，标签太多或卡顿时建议限制展示的数量'
+                  help: '设置标签云的展示形式，默认为 "3D分类云"，标签太多或卡顿时建议限制展示的数量'
                   options:
                     - value: 3d
                       label: 3D分类云
@@ -1984,7 +2006,7 @@ spec:
           id: post_img_align
           label: 图片对齐方式
           value: center
-          help: '设置文章内容区域图片的对齐方式（默认为 “居中”，也可通过页面元数据 img_align 配置）'
+          help: '设置文章内容区域图片的对齐方式（默认为 "居中"，也可通过页面元数据 img_align 配置）'
           options:
             - value: left
               label: 左对齐
@@ -2202,7 +2224,7 @@ spec:
           name: passage_rights_content
           label: 许可协议文案
           value: ''
-          help: '自定义文章页底部版权模块中的“作品采用”文案，为空则使用默认文案，一般不用设置'
+          help: '自定义文章页底部版权模块中的"作品采用"文案，为空则使用默认文案，一般不用设置'
 
         - $formkit: radio
           name: enable_donate
@@ -3196,7 +3218,7 @@ spec:
           name: baidu_token
           label: 百度推送Token
           value: ''
-          help: '文章页未收录时会自动将当前链接推送给百度加快收录，Token在百度收录平台注册账号获取（必须启用“检查百度收录”并填入token才生效），https://ziyuan.baidu.com/linksubmit'
+          help: '文章页未收录时会自动将当前链接推送给百度加快收录，Token在百度收录平台注册账号获取（必须启用"检查百度收录"并填入token才生效），https://ziyuan.baidu.com/linksubmit'
         - $formkit: select
           name: enable_console_theme
           label: 控制台输出主题信息
